@@ -1,0 +1,29 @@
+{
+  "name": "cmykpluswhite",
+  "productName": "CMYK+WHITE",
+  "version": "1.0.3",
+  "description": "CMYK+WHITE Intranet",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron Webview\"",
+    "package-linux": "electron-packager . --overwrite --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds",
+    "create-installer-mac": "electron-installer-dmg ./release-builds/CMYK+WHITE-darwin-x64/CMYK+WHITE.app electron-webview --out=release-builds --overwrite --icon=assets/icons/mac/icon.icns"
+  },
+  "keywords": [
+    "CMYK+WHITE",
+    "intranet"
+  ],
+  "author": "CMYK+WHITE",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "~7.0.0",
+    "electron-installer-dmg": "^3.0.0",
+    "electron-packager": "^14.1.1"
+  },
+  "dependencies": {
+    "electron-updater": "^4.2.0",
+    "update-electron-app": "^1.5.0"
+  }
+}
